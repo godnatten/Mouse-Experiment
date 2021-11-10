@@ -68,11 +68,15 @@ def msg(txt):
 msg(instruction)
 
 #Defining stimulus
-stimuli = glob.glob("mouse.jpg")
+path = "folder/"
+stimuli = glob.glob("folder/mouse.jpg")
 print(stimuli)
 
 #Get 
-for stimulus in stimuli:
-    img=visual.ImageStim(win,stimulus)
+def = show(image): 
+    img = visual.ImageStim(win,stimuli):
     img.draw()
     win.flip()
+    event.waitKeys()
+
+show(stimuli)
