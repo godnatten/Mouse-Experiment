@@ -43,6 +43,36 @@ date = data.getDateStr()
 #Save data to harddrive
 logfile_name = "logfiles/logfile_{}_{}.csv".format(ID,date)
 
+#defining date
+date = data.getDateStr() 
+
 #Define instruction message
-instruction = '''Welcome to our Experiment!
-In a moment 
+instruction = '''Welcome to our Experiment! Thank you for participating!
+In a moment you will see a picture and will be asked to rate this picture on a scale from 0-10, with 10 being the most positive and 0 being the most negative.
+
+Press any key when you are ready. If you have any questions or feell any discomfort during the test please contact the researcher. 
+'''
+
+#Defining goodbye message
+goodbye = ''' 
+The experiment is done. Thank you for your participation.'''
+
+#defining functions - show text and wait for key press
+def msg(txt):
+    message = visual.TextStim(win, text = txt, alignText = "left", height = 0.05)
+    message.draw()
+    win.flip()
+    event.waitKeys()
+
+#Show instructions
+msg(instruction)
+
+#Defining stimulus
+stimuli = glob.glob("mouse.jpg")
+print(stimuli)
+
+#Get 
+for stimulus in stimuli:
+    img=visual.ImageStim(win,stimulus)
+    img.draw()
+    win.flip()
